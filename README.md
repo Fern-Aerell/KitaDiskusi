@@ -6,11 +6,30 @@
 
 Platform diskusi berbasis web yang dirancang untuk memfasilitasi percakapan dan kolaborasi antar pengguna dalam berbagai topik.
 
-## Fitur
+## Fitur Utama
 
-- Belum dibuat
+- **Pembuatan Topik Diskusi**: Pengguna dapat membuat topik diskusi baru
+- **Komentar dan Balasan**: Setiap diskusi memungkinkan pengguna untuk memberikan komentar dan membalas komentar
+- **Upvote dan Downvote**: Pengguna dapat memberikan suara pada komentar untuk menyoroti kontribusi terbaik.
+- **Pencarian Topik**: Fitur pencarian yang memudahkan menemukan diskusi berdasarkan kata kunci atau kategori.
 
-## Cara menggunakan
+## Teknologi yang Digunakan
+- **Frontend**:
+    - HTML
+    - CSS
+    - JS
+    - Laravel blade
+
+- **Backend**:
+    - Laravel
+
+- **Database**: 
+    - Mysql
+
+- **Deployment**: 
+    - Belum diketahui
+
+## Cara Instalasi
 
 - Belum dibuat
 
