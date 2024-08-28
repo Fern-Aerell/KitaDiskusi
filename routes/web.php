@@ -1,23 +1,16 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return redirect('/login');
 });
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/quest/detail', function () {
-    return view('quest.detail');
-})->name('quest.detail');
-
-Route::get('/profile/edit', function () {
-    return view('profile.edit');
-})->name('profile.edit');
+Route::get('/welcome', function () {
+    return view('welcome');
+})->middleware('auth')->name('welcome');
