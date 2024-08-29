@@ -37,7 +37,7 @@ input {
 button {
     font-size: 15px;
     padding: 5px;
-    gap: 20px; 
+    gap: 20px;
     border: #bbb8b8 1px solid;
     background-color: lightgreen;
     display: flex;
