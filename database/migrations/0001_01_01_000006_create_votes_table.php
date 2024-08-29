@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('coment_id');
-            $table->foreignId('user_id');
-            $table->string('vote_type');
-            $table->timestamp('created_at');
+            $table->foreignId('comment_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->enum('vote', ['up', 'down']);
+            $table->timestamps();
         });
     }
 
