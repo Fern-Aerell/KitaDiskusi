@@ -9,22 +9,36 @@
     <link rel="stylesheet" href="/css/detail.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light head-detail">
+<nav class="navbar navbar-expand-lg navbar-light head-detail">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Forum Diskusi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">Forum Diskusi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Nav1</a>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Nav-1</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nav2</a>
+                        <a class="nav-link" href="#">Nav-2</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nav3</a>
+                        <a class="nav-link" href="#">Nav-3</a>
+                    </li> -->
+                
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="profile-icon">
+                                <span>N</span> 
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -37,7 +51,7 @@
                 <div class="card mb-4">
                     <div class="card-header head-detail d-flex justify-content-between align-items-center ">
                         <span>Pertanyaan @User</span>
-                        <span class="text-muted">Tanggal: 29 Agustus 2024</span>
+                        <span class="text-muted">29 Agustus 2024</span>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Judul Pertanyaan</h5>
@@ -53,7 +67,7 @@
                                 </div>
                                 <div class="ms-3">
                                     <p class="mb-1"><strong>@User 1:</strong></p>
-                                    <p class="text-muted">Tanggal: 30 Agustus 2024</p>
+                                    <p class="text-muted">30 Agustus 2024</p>
                                     <p class="card-text">Jawaban dari @User 1 ada disini</p>
                                 </div>
                             </div>
@@ -67,7 +81,7 @@
                                 </div>
                                 <div class="ms-3">
                                     <p class="mb-1"><strong>@User 2:</strong></p>
-                                    <p class="text-muted">Tanggal: 31 Agustus 2024</p>
+                                    <p class="text-muted">31 Agustus 2024</p>
                                     <p class="card-text">Jawaban dari @User 2 ada disini</p>
                                 </div>
                             </div>

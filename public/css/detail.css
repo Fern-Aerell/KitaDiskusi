@@ -41,3 +41,38 @@
 .head-detail {
     background-color: #8FBC8F;
 }
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.dropdown-menu {
+    background-color: #8FBC8F;
+}
+
+.dropdown-item {
+    background-color: #8FBC8F;
+}
+.dropdown-item:hover {
+    background-color: #B4FE98;
+}
+
+.detail-btn {
+    background-color: #50CB93;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
