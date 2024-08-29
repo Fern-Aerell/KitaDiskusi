@@ -15,12 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('topic_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->integer('parent_id');
+            $table->foreignId('parent_id')->nullable()->constrained('comments')->cascadeOnDelete();
             $table->text('body');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
-
-
+            $table->timestamps();
         });
     }
 
