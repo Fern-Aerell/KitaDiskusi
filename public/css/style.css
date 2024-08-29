@@ -54,3 +54,35 @@ button {
 h1 {
     margin-bottom: 10px;
 }
+
+.regis {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    width: 400px;
+    border-radius: 5px;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+
+/* responsive */
+@media  (max-width:640px) {
+    .container {
+        width: 250px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input {
+        width: 200px;
+    }
+
+    .regis {
+        width: 250px;
+        font-size: 10px;
+    }
+}
