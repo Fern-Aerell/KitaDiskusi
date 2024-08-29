@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Halaman Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <form action="/login" method="post">
-        @csrf
-        <div>
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email">
-            @error('email')
-                <p>{{ $message }}</p>
-            @enderror
+    <div class="halaman-login">
+        <div class="container">
+            <form action="/login" method="post">
+                <h1>Login</h1>
+                <div class="email">
+                    @csrf
+                    <input type="text" name="email" id="email" placeholder="Gmail">
+                    @error('email')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="password">
+                    <br>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    @error('password')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="button">
+                    <button type="submit">Masuk</button>
+                </div>
+            </form>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-            @error('password')
-                <p>{{ $message }}</p>
-            @enderror
-        </div>
-        <button type="submit">Masuk</button>
-    </form>
+    </div>
 </body>
+
 </html>
