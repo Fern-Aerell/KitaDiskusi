@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/detail.css">
+    
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light head-detail">
@@ -17,17 +18,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Nav-1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nav-2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nav-3</a>
-                    </li> -->
-                
+                <ul class="navbar-nav ms-auto">                
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,7 +38,7 @@
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-8    ">
+            <div class="col-md-8">
                 <div class="card mb-4">
                     <div class="card-header head-detail d-flex justify-content-between align-items-center ">
                         <span>Pertanyaan @User</span>
@@ -58,33 +49,64 @@
                         <p class="card-text">Deskripsi detail pertanyaan</p>
                         <hr>
                         <h6>Jawaban</h6>
-                        <div class="mb-4">
-                            <div class="d-flex align-items-center mb-2">
-                                <div class="vote-buttons" id="vote1">
-                                    <button class="upvote"><i class="fa-solid fa-arrow-up"></i></button>
-                                    <span class="vote-count">0</span>
-                                    <button class="downvote"><i class="fa-solid fa-arrow-down"></i></button>
-                                </div>
-                                <div class="ms-3">
-                                    <p class="mb-1"><strong>@User 1:</strong></p>
-                                    <p class="text-muted">30 Agustus 2024</p>
-                                    <p class="card-text">Jawaban dari @User 1 ada disini</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="d-flex align-items-center mb-2">
-                                <div class="vote-buttons" id="vote2">
-                                    <button class="upvote"><i class="fa-solid fa-arrow-up"></i></button>
-                                    <span class="vote-count">0</span>
-                                    <button class="downvote"><i class="fa-solid fa-arrow-down"></i></button>
-                                </div>
-                                <div class="ms-3">
-                                    <p class="mb-1"><strong>@User 2:</strong></p>
-                                    <p class="text-muted">31 Agustus 2024</p>
-                                    <p class="card-text">Jawaban dari @User 2 ada disini</p>
+                        <div class="answers-container">
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="vote-buttons" id="vote1">
+                                        <button class="upvote"><i class="fa-solid fa-arrow-up"></i></button>
+                                        <span class="vote-count">0</span>
+                                        <button class="downvote"><i class="fa-solid fa-arrow-down"></i></button>
+                                    </div>
+                                    <div class="ms-3">
+                                        <p class="mb-1"><strong>@User 1:</strong></p>
+                                        <p class="text-muted">30 Agustus 2024</p>
+                                        <p class="card-text">Jawaban dari @User 1 ada disini</p>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="vote-buttons" id="vote2">
+                                        <button class="upvote"><i class="fa-solid fa-arrow-up"></i></button>
+                                        <span class="vote-count">0</span>
+                                        <button class="downvote"><i class="fa-solid fa-arrow-down"></i></button>
+                                    </div>
+                                    <div class="ms-3">
+                                        <p class="mb-1"><strong>@User 2:</strong></p>
+                                        <p class="text-muted">31 Agustus 2024</p>
+                                        <p class="card-text">Jawaban dari @User 2 ada disini</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="vote-buttons" id="vote3">
+                                        <button class="upvote"><i class="fa-solid fa-arrow-up"></i></button>
+                                        <span class="vote-count">0</span>
+                                        <button class="downvote"><i class="fa-solid fa-arrow-down"></i></button>
+                                    </div>
+                                    <div class="ms-3">
+                                        <p class="mb-1"><strong>@User 3:</strong></p>
+                                        <p class="text-muted">31 Agustus 2024</p>
+                                        <p class="card-text">Jawaban dari @User 3 ada disini</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="vote-buttons" id="vote3">
+                                        <button class="upvote"><i class="fa-solid fa-arrow-up"></i></button>
+                                        <span class="vote-count">0</span>
+                                        <button class="downvote"><i class="fa-solid fa-arrow-down"></i></button>
+                                    </div>
+                                    <div class="ms-3">
+                                        <p class="mb-1"><strong>@User 4:</strong></p>
+                                        <p class="text-muted">31 Agustus 2024</p>
+                                        <p class="card-text">Jawaban dari @User 4 ada disini</p>
+                                    </div>
+                                </div>
+                            </div>
+          
                         </div>
                     </div>
                 </div>

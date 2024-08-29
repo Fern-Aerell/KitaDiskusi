@@ -7,9 +7,7 @@
     <title>Forum Tanya Jawab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/home.css">
-    <style>
-       
-    </style>
+    
 </head>
 
 <body>
@@ -22,21 +20,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Nav-1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nav-2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nav-3</a>
-                    </li> -->
-                
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="profile-icon">
-                                <span>N</span> 
+                                <span>N</span>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -77,7 +65,7 @@
                     <div class="card-header head-home">
                         Daftar Pertanyaan
                     </div>
-                    <div class="card-body">
+                    <div class="card-body questions-list">
                         <div class="mb-4">
                             <h5 class="card-title">Judul Pertanyaan 1</h5>
                             <p class="card-text">Deskripsi pertanyaan</p>
@@ -85,6 +73,16 @@
                         </div>
                         <div class="mb-4">
                             <h5 class="card-title">Judul Pertanyaan 2</h5>
+                            <p class="card-text">Deskripsi pertanyaan</p>
+                            <a href="{{ route('quest.detail') }}" class="detail-btn">Lihat Detail</a>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="card-title">Judul Pertanyaan 3</h5>
+                            <p class="card-text">Deskripsi pertanyaan</p>
+                            <a href="{{ route('quest.detail') }}" class="detail-btn">Lihat Detail</a>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="card-title">Judul Pertanyaan 4</h5>
                             <p class="card-text">Deskripsi pertanyaan</p>
                             <a href="{{ route('quest.detail') }}" class="detail-btn">Lihat Detail</a>
                         </div>

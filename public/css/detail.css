@@ -76,3 +76,12 @@
     font-size: 14px;
     transition: background-color 0.3s ease;
 }
+.answers-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+.vote-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
