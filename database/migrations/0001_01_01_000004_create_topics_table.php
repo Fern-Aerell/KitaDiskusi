@@ -16,10 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('title');
             $table->text('body');
-            $table->string('category');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
-
+            $table->foreignId('categorie_id')->constrained();
+            $table->timestamps();
         });
     }
 
