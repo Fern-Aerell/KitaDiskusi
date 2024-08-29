@@ -7,6 +7,9 @@
     <title>Forum Tanya Jawab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/home.css">
+    <style>
+       
+    </style>
 </head>
 
 <body>
@@ -28,6 +31,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Nav-3</a>
                     </li>
+                
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="profile-icon">
+                                <span>N</span> 
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -44,11 +60,13 @@
                         <form>
                             <div class="mb-3">
                                 <label for="questionTitle" class="form-label">Judul Pertanyaan</label>
-                                <input type="text" class="form-control" id="questionTitle" placeholder="Masukkan judul pertanyaan">
+                                <input type="text" class="form-control" id="questionTitle"
+                                    placeholder="Masukkan judul pertanyaan">
                             </div>
                             <div class="mb-3">
                                 <label for="questionDetails" class="form-label">Detail Pertanyaan</label>
-                                <textarea class="form-control" id="questionDetails" rows="4" placeholder="Jelaskan pertanyaan Anda"></textarea>
+                                <textarea class="form-control" id="questionDetails" rows="4"
+                                    placeholder="Jelaskan pertanyaan Anda"></textarea>
                             </div>
                             <button type="submit" class="btn btn-success">Kirim Pertanyaan</button>
                         </form>
@@ -63,12 +81,12 @@
                         <div class="mb-4">
                             <h5 class="card-title">Judul Pertanyaan 1</h5>
                             <p class="card-text">Deskripsi pertanyaan</p>
-                            <a href="{{ route('quest.detail') }}" class="btn btn-link text-decoration-none">Lihat detail</a>
+                            <a href="{{ route('quest.detail') }}" class="detail-btn">Lihat Detail</a>
                         </div>
                         <div class="mb-4">
                             <h5 class="card-title">Judul Pertanyaan 2</h5>
                             <p class="card-text">Deskripsi pertanyaan</p>
-                            <a href="{{ route('quest.detail') }}" class="btn btn-link text-decoration-none">Lihat detail</a>
+                            <a href="{{ route('quest.detail') }}" class="detail-btn">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -106,7 +124,7 @@
 
     <footer class="head-home text-center text-lg-start mt-5">
         <div class="text-center p-3">
-            © 2024 Forum Tanya Jawab
+            © 2024 Forum Diskusi
         </div>
     </footer>
 

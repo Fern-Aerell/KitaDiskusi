@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 
-                <!-- Tombol Kembali ke Halaman Utama -->
+               
                 <a href="{{ route('home') }}" class="btn btn-success mt-3">Kembali ke Halaman Utama</a>
             </div>
             
@@ -100,9 +100,9 @@
                         Pertanyaan Terkait
                     </div>
                     <div class="list-group list-group-flush">
-                        <a href="pertanyaan2.html" class="list-group-item list-group-item-action">Pertanyaan Lainnya</a>
-                        <a href="#" class="list-group-item list-group-item-action">Pertanyaan Lainnya</a>
-                        <a href="#" class="list-group-item list-group-item-action">Pertanyaan Lainnya</a>
+                        <a href="{{ route('home') }}" class="list-group-item list-group-item-action">Pertanyaan Lainnya</a>
+                        <a href="{{ route('home') }}" class="list-group-item list-group-item-action">Pertanyaan Lainnya</a>
+                        <a href="{{ route('home') }}" class="list-group-item list-group-item-action">Pertanyaan Lainnya</a>
                     </div>
                 </div>
             </div>
