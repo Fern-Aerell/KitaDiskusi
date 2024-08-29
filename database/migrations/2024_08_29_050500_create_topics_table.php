@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('topics', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('email');
-            $table->string('password');
+            $table->foreignId('user_id')->constrained();
+            $table->string('title');
+            $table->text('body');
+            $table->string('category');
             $table->timestamp('created_at');
-            $table->timestamp("updated_at");
-            
-        });
+            $table->timestamp('updated_at');
 
-       
+        });
     }
 
     /**
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('topics');
     }
 };
