@@ -66,6 +66,12 @@ h1 {
     gap: 10px;
 }
 
+button:hover {
+    background-color: lightblue;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
 
 /* responsive */
 @media  (max-width:640px) {
