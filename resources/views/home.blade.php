@@ -22,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Nav-1</a>
                     </li>
                     <li class="nav-item">
@@ -30,7 +30,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Nav-3</a>
-                    </li>
+                    </li> -->
                 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
