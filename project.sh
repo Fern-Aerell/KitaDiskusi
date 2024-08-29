@@ -6,7 +6,7 @@ declare -A project_configs
 project_configs["project_name"]="kitadiskusi"
 project_configs["project_version"]="0.0.1"
 project_configs["composer_version"]="2.7.8"
-project_configs["php_version"]="8.3.10"
+project_configs["php_version"]="8.2.21"
 project_configs["laravel_version"]="^11.9"
 project_configs["node_version"]="22.7.0"
 project_configs["npm_version"]="10.8.2"
