@@ -14,3 +14,11 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/welcome', function () {
     return view('welcome');
 })->middleware('auth')->name('welcome');
+
+Route::get('/regis', function () {
+    return view('register');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});

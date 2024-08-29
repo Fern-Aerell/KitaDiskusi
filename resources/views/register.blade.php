@@ -13,7 +13,7 @@
     <div class="halaman-login">
         <div class="container">
             <form action="/login" method="post">
-                <h1>Sign In</h1>
+                <h1>Sign Up</h1>
                 <div class="email">
                     @csrf
                     <input type="text" name="email" id="email" placeholder="Email">
@@ -28,14 +28,21 @@
                         <p>{{ $message }}</p>
                     @enderror
                 </div>
+                <div class="confirm-password">
+                    <br>
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
+                    @error('confirm-password')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
                 <div class="button">
-                    <button type="submit">Masuk</button>
+                    <button type="submit">Daftar</button>
                 </div>
             </form>
         </div>
         <div class="regis">
-            <p>belum punya akun? </p>
-            <a href="/regis"><p>Sign Up</p></a>
+            <p>sudah punya akun? </p>
+            <a href="/login"><p>Sign In</p></a>
         </div>
     </div>
 </body>
