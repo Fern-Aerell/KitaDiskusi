@@ -1,0 +1,87 @@
+
+.vote-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+}
+.vote-buttons button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.vote-buttons .vote-count {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+}
+.vote-buttons button:hover {
+    color: #007bff; 
+    transform: scale(1.2); 
+}
+.vote-buttons .upvote-active i,
+.vote-buttons .downvote-active i {
+    color: #007bff; 
+}
+.vote-buttons .upvote i {
+    color: #28a745; 
+}
+.vote-buttons .downvote i {
+    color: #dc3545; 
+}
+.vote-buttons .upvote-active i {
+    color: #007bff; 
+}
+.vote-buttons .downvote-active i {
+    color: #007bff; 
+}
+.head-detail {
+    background-color: #8FBC8F;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.dropdown-menu {
+    background-color: #8FBC8F;
+}
+
+.dropdown-item {
+    background-color: #8FBC8F;
+}
+.dropdown-item:hover {
+    background-color: #B4FE98;
+}
+
+.detail-btn {
+    background-color: #50CB93;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+.answers-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+.vote-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
