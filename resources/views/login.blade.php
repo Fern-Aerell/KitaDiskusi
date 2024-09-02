@@ -12,8 +12,9 @@
 <body>
     <div class="halaman-login">
         <div class="container">
-            <form action="/login" method="post">
+            <form action="{{ route('login.auth') }}" method="post">
                 <h1>Sign In</h1>
+                <p>{{ session('success') }}</p>
                 <div class="email">
                     @csrf
                     <input type="text" name="email" id="email" placeholder="Email">
@@ -35,7 +36,7 @@
         </div>
         <div class="regis">
             <p>belum punya akun? </p>
-            <a href="/regis"><p>Sign Up</p></a>
+            <a href="{{ route('signup') }}"><p>Sign Up</p></a>
         </div>
     </div>
 </body>
