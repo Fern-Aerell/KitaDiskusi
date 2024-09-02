@@ -1,24 +1,25 @@
 <?php
 
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function() {
-    return redirect('/login');
+    return view('index', ['isLogin' => Auth::check()]);
+})->name('index');
+
+Route::middleware(['guest'])->group(function() {
+
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'authenticate'])->name('login.auth');
+
+    Route::get('/signup', [AuthController::class, 'signup'])->name('signup');
+    Route::post('/signup', [AuthController::class, 'store'])->name('signup.store');
+
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::middleware(['auth'])->group(function() {
 
-Route::get('/welcome', function () {
-    return view('welcome');
-})->middleware('auth')->name('welcome');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/regis', function () {
-    return view('register');
-});
-
-Route::get('/login', function () {
-    return view('login');
 });
