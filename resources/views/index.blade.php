@@ -1,26 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index</title>
-</head>
-<body>
-    <?php if($isLogin) { ?>
-        <h1>Kamu sudah login</h1>
-        <form action="{{ route('logout') }}" method="post">
-            @csrf
-            <button type="submit">Logout</button>
-        </form>
-    <?php } else { ?>
-        <h1>Kamu belum login</h1>
-        <p>Silahkan login terlebih dahulu</p>
-        <form action="{{ route('login') }}" method="get">
-            @csrf
-            <button type="submit">Login</button>
-        </form>
-    <?php } ?>
+    <title>Forum Tanya Jawab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
     
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light head-home">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Forum Diskusi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="profile-icon">
+                                <span>N</span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <?php if($isLogin) { ?>
+                                <li><a class="dropdown-item" href="{{ route('profile') }}">Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                            <?php } else { ?>
+                                <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                            <?php } ?>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header head-home">
+                        Ajukan Pertanyaan
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="questionTitle" class="form-label">Judul Pertanyaan</label>
+                                <input type="text" class="form-control" id="questionTitle"
+                                    placeholder="Masukkan judul pertanyaan">
+                            </div>
+                            <div class="mb-3">
+                                <label for="questionDetails" class="form-label">Detail Pertanyaan</label>
+                                <textarea class="form-control" id="questionDetails" rows="4"
+                                    placeholder="Jelaskan pertanyaan Anda"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Kirim Pertanyaan</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header head-home">
+                        Daftar Pertanyaan
+                    </div>
+                    <div class="card-body questions-list">
+                        <div class="mb-4">
+                            <h5 class="card-title">Judul Pertanyaan 1</h5>
+                            <p class="card-text">Deskripsi pertanyaan</p>
+                            <a href="{{ route('question') }}" class="detail-btn">Lihat Detail</a>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="card-title">Judul Pertanyaan 2</h5>
+                            <p class="card-text">Deskripsi pertanyaan</p>
+                            <a href="{{ route('question') }}" class="detail-btn">Lihat Detail</a>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="card-title">Judul Pertanyaan 3</h5>
+                            <p class="card-text">Deskripsi pertanyaan</p>
+                            <a href="{{ route('question') }}" class="detail-btn">Lihat Detail</a>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="card-title">Judul Pertanyaan 4</h5>
+                            <p class="card-text">Deskripsi pertanyaan</p>
+                            <a href="{{ route('question') }}" class="detail-btn">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header head-home">
+                        Pencarian
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="search" class="form-label">Cari Pertanyaan</label>
+                                <input type="text" class="form-control" id="search" placeholder="Cari di forum">
+                            </div>
+                            <button type="submit" class="btn btn-success">Cari</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header head-home">
+                        Kategori
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action">Kategori 1</a>
+                        <a href="#" class="list-group-item list-group-item-action">Kategori 2</a>
+                        <a href="#" class="list-group-item list-group-item-action">Kategori 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="head-home text-center text-lg-start mt-5">
+        <div class="text-center p-3">
+            © 2024 Forum Diskusi
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
