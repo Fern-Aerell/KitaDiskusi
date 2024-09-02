@@ -1,9 +1,9 @@
 # Tugas 2
 
 ## Aerell
-1. Membuat sistem register dari halaman login yang sudah di buat oleh habib
+1. Membuat sistem register dari halaman login yang sudah di buat oleh habib (Sudah)
 2. Mengecek tampilan halaman yang dibuat oleh niko (Sudah)
-3. Membuat model untuk tabel
+3. Membuat model untuk tabel (sudah)
 
 ## Nia
 1. Mengexport desain ERD menjadi file png
