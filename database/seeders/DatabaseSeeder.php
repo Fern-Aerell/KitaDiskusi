@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'username' => 'admin',
             'email' => 'admin@kitadiskusi.com',
-            'password' => Hash::make('admin#124'),
+            'password' => Hash::make('admin#1234'),
         ]);
     }
 }
