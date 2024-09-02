@@ -14,7 +14,7 @@
             <!-- Tombol Kembali -->
             <button class="back-button" onclick="window.history.back();"><i class="fas fa-arrow-left"></i></button>
             
-            <h2 class="mb-4"><i class="fas fa-user-circle"></i> Profile Settings</h2>
+            <h2 class="mb-4"><i class="fas fa-user-circle"></i> Profile Akun</h2>
             
             <!-- Form untuk Name-->
             <div class="form-group">
@@ -41,10 +41,10 @@
             </div>
             
             <!-- Tombol untuk Save -->
-            <button class="btn btn-primary mb-4"><i class="fas fa-save"></i> Save Changes</button>
+            <button class="btn btn-primary mb-4"><i class="fas fa-save"></i> Simpan</button>
 
             <!-- Tombol untuk Hapus Akun -->
-            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"><i class="fas fa-trash-alt"></i> Delete Account</button>
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"><i class="fas fa-trash-alt"></i> Hapus Akun</button>
         </div>
         
         <!-- Fitur Konfirmasi Hapus Akun -->
@@ -52,16 +52,16 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Account Deletion</h5>
+                        <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Deteksi Akun</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <i class="fas fa-exclamation-triangle"></i>
-                        <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+                        <p>Apakah anda ingin menghapus Akun? Tindakan ini tidak dapat di ulang.</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger">Yes, Delete</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-danger">Ya,Hapus</button>
                     </div>
                 </div>
             </div>

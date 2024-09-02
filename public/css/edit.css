@@ -1,0 +1,191 @@
+
+body {
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    font-family: Arial, sans-serif;
+}
+.profile-card {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 35px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+.profile-card h2 {
+    margin-bottom: 1.8rem;
+    color: #343a40;
+    text-align: center;
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #007bff;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.back-button i {
+    font-size: 18px;
+}
+.back-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.form-group {
+    position: relative;
+    margin-bottom: 1.8rem;
+}
+.form-control {
+    padding: 14px 18px;
+    border: none;
+    border-bottom: 2px solid #ced4da;
+    border-radius: 0;
+    transition: all 0.4s ease;
+    font-size: 16px;
+    background-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-control::placeholder {
+    color: transparent;
+}
+.form-control:focus {
+    border-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    outline: none;
+    background-color: #f1f8ff;
+}
+.form-control:not(:placeholder-shown) + .form-label,
+.form-control:focus + .form-label {
+    top: -18px;
+    left: 14px;
+    font-weight: bold;
+    color: #007bff;
+    background: white;
+    padding: 0 5px;
+    transform: translateY(0) scale(0.85);
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+.form-label {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    font-size: 16px;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background: white;
+    padding: 0 5px;
+    transform-origin: left top;
+    opacity: 1;
+}
+.btn-primary, .btn-danger {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.btn-primary::before, .btn-danger::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(0,0,0,0.1));
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    border-radius: 5px;
+}
+.btn-primary:hover::before, .btn-danger:hover::before {
+    opacity: 1;
+}
+.btn-primary:hover {
+    background: linear-gradient(to right, #007bff, #00d4ff);
+    border-color: transparent;
+    transform: scale(1.05);
+}
+.btn-danger {
+    margin-bottom: 0;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
+/* Enhanced Modal Styling */
+.modal-content {
+    border-radius: 15px;
+    padding: 25px;
+    background-color: #fff;
+    text-align: center;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+}
+.modal-body {
+    padding: 20px;
+    font-size: 1.125rem;
+    color: #6c757d;
+}
+.modal-body i {
+    font-size: 4rem;
+    color: #e63946;
+    margin-bottom: 20px;
+}
+.modal-footer {
+    border-top: none;
+    padding: 0;
+}
+.modal-footer .btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+.modal-footer .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268;
+}
+.modal-footer .btn-danger {
+    background-color: #e63946;
+    border-color: #e63946;
+}
+.modal-footer .btn-danger:hover {
+    background-color: #d62839;
+}
+
+/* Modal backdrop with subtle blur effect */
+.modal-backdrop {
+    backdrop-filter: blur(5px);
+}
+

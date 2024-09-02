@@ -17,3 +17,7 @@ Route::get('/home', function () {
 Route::get('/quest/detail', function () {
     return view('quest.detail');
 })->name('quest.detail');
+
+Route::get('/profile/edit', function () {
+    return view('profile.edit');
+})->name('profile.edit');
