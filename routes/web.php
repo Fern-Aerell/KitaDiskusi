@@ -8,6 +8,10 @@ Route::get('/', function() {
     return view('index', ['isLogin' => Auth::check()]);
 })->name('index');
 
+Route::get('/question', function() {
+    return view('question', ['isLogin' => Auth::check()]);
+})->name('question');
+
 Route::middleware(['guest'])->group(function() {
 
     Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -20,6 +24,10 @@ Route::middleware(['guest'])->group(function() {
 
 Route::middleware(['auth'])->group(function() {
 
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::get('/profile', function() {
+        return view('profile');
+    })->name('profile');
 
 });
