@@ -15,13 +15,13 @@
 @section('content')
     <x-navbar></x-navbar>
 
-    <div class="container mt-5">
+    <div class="container mt-5 min-vh-100">
         <div class="row">
             <div class="col-md-8">
                 <div class="card mb-4">
                     <div class="card-header head-detail d-flex justify-content-between align-items-center ">
                         <span>Dari {{ $topic->user->name }}</span>
-                        <span class="text-muted">{{ $topic->created_at }}</span>
+                        <span class="text-muted">{{ $topic->created_at->format('d F Y - H:i') }}</span>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ $topic->title }}</h5>
@@ -29,32 +29,42 @@
                         <hr>
                         <h6>Tanggapan</h6>
                         <div class="answers-container">
-                            @foreach($topic->comments->reverse() as $comment)
-                                <div class="mb-4">
-                                    <div class="d-flex align-items-center mb-2">
-                                        <div class="vote-buttons" id="vote1">
-                                            <form action="{{ route('comment.vote') }}" method="post">
-                                                @csrf
-                                                <input type="text" name="comment_id" value="{{ $comment->id }}" hidden>
-                                                <input type="text" name="vote" value="up" hidden>
-                                                <button type="submit" class="upvote"><i class="fa-solid fa-arrow-up"></i></button>
-                                            </form>
-                                            <span class="vote-count">{{ count($comment->votes->where('vote', 'up')) - count($comment->votes->where('vote', 'down')) }}</span>
-                                            <form action="{{ route('comment.vote') }}" method="post">
-                                                @csrf
-                                                <input type="text" name="comment_id" value="{{ $comment->id }}" hidden>
-                                                <input type="text" name="vote" value="down" hidden>
-                                                <button type="submit" class="downvote"><i class="fa-solid fa-arrow-down"></i></button>
-                                            </form>
-                                        </div>
-                                        <div class="ms-3">
-                                            <p class="mb-1"><strong>{{ $comment->user->name }}:</strong></p>
-                                            <p class="text-muted">{{ $comment->created_at }}</p>
-                                            <p class="card-text">{{ $comment->body }}</p>
+                            @if($topic->comments->isEmpty())
+                                <p>Belum ada tanggapan untuk topik ini.</p>
+                            @else
+                                @foreach($topic->comments->sortByDesc(function($comment) {
+                                    return $comment->votes->where('vote', 'up')->count() - $comment->votes->where('vote', 'down')->count();
+                                }) as $comment)
+                                    <div class="mb-4">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <div class="vote-buttons" id="vote1">
+                                                <form action="{{ route('comment.vote') }}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                                                    <input type="hidden" name="vote" value="up">
+                                                    <button type="submit" class="upvote {{ $comment->votes->where('user_id', auth()->id())->where('vote', 'up')->count() > 0 ? 'text-success' : '' }}">
+                                                        <i class="fa-solid fa-arrow-up"></i>
+                                                    </button>
+                                                </form>
+                                                <span class="vote-count">{{ $comment->votes->where('vote', 'up')->count() - $comment->votes->where('vote', 'down')->count() }}</span>
+                                                <form action="{{ route('comment.vote') }}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                                                    <input type="hidden" name="vote" value="down">
+                                                    <button type="submit" class="downvote {{ $comment->votes->where('user_id', auth()->id())->where('vote', 'down')->count() > 0 ? 'text-danger' : '' }}">
+                                                        <i class="fa-solid fa-arrow-down"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div class="ms-3">
+                                                <p class="mb-1"><strong>{{ $comment->user->name }}:</strong></p>
+                                                <p class="text-muted">{{ $comment->created_at->format('d F Y - H:i') }}</p>
+                                                <p class="card-text">{{ $comment->body }}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -91,9 +101,11 @@
                         Diskusi Lainnya
                     </div>
                     <div class="list-group list-group-flush">
-                        <a href="{{ route('index') }}" class="list-group-item list-group-item-action">Pertanyaan Lainnya</a>
-                        <a href="{{ route('index') }}" class="list-group-item list-group-item-action">Pertanyaan Lainnya</a>
-                        <a href="{{ route('index') }}" class="list-group-item list-group-item-action">Pertanyaan Lainnya</a>
+                        @forelse($topics as $topic)
+                            <a href="{{ route('question', $topic->id) }}" class="list-group-item list-group-item-action">{{ Str::limit($topic->title, 50) }}...</a>
+                        @empty
+                            <div class="list-group-item">Tidak ada diskusi lainnya saat ini.</div>
+                        @endforelse
                     </div>
                 </div>
             </div>

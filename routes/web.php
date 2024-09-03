@@ -3,8 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TopicController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
@@ -25,9 +25,9 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-    Route::get('/profile', function() {
-        return view('profile');
-    })->name('profile');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::post('/profile', [ProfileController::class, 'store'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'delete'])->name('profile.delete');
 
     Route::post('/topic/store', [TopicController::class, 'store'])->name('topic.store');
 

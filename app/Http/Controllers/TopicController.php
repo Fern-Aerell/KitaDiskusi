@@ -13,10 +13,14 @@ class TopicController extends Controller
     public function index(Request $request, int $id) {
         
         $topic = Topic::where('id', $id)->first();
+        $topics = Topic::where('id', '!=', $id)->limit(10)->get();
 
         if($topic == null) abort(404);
 
-        return view('question', ['topic' => $topic]);
+        return view('question', [
+            'topics' => $topics,
+            'topic' => $topic
+        ]);
     }
 
     public function store(Request $request) {
@@ -49,6 +53,6 @@ class TopicController extends Controller
         $topic->categorie_id = $categorie->id;
         $topic->save();
 
-        return redirect()->route('index')->with('success', 'Pertanyaan kamu berhasil di tambahkan.');
+        return redirect()->back()->with('success', 'Pertanyaan kamu berhasil di tambahkan.');
     }
 }

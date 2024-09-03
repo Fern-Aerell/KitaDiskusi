@@ -9,7 +9,7 @@ Platform diskusi berbasis web yang dirancang untuk memfasilitasi percakapan dan 
 ## Fitur Utama
 
 - **Pembuatan Topik Diskusi**: Pengguna dapat membuat topik diskusi baru
-- **Komentar dan Balasan**: Setiap diskusi memungkinkan pengguna untuk memberikan komentar dan membalas komentar
+- **Tanggapan**: Setiap diskusi memungkinkan pengguna untuk memberikan tanggapan.
 - **Upvote dan Downvote**: Pengguna dapat memberikan suara pada komentar untuk menyoroti kontribusi terbaik.
 - **Pencarian Topik**: Fitur pencarian yang memudahkan menemukan diskusi berdasarkan kata kunci atau kategori.
 

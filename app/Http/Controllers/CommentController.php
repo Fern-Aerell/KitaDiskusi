@@ -27,7 +27,7 @@ class CommentController extends Controller
         $comment->body = $request->input('body');
         $comment->save();
 
-        return redirect()->route('question', ['id' => $request->input('topic_id')])->with('success', 'Tanggapan kamu berhasil di tambahkan.');
+        return redirect()->back()->with('success', 'Tanggapan kamu berhasil di tambahkan.');
     }
 
     public function vote(Request $request) {
