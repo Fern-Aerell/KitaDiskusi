@@ -14,9 +14,9 @@
 1. Mendesain tampilan error pada saat login dan register
 
 ## Niko :
-1. Membuat halaman profile
-    - Fitur mengganti name, username, email, dan password
-    - Fitur untuk menghapus akun (tambahkan juga konfirmasi untuk user ya atau tidak)
+1. Membuat halaman profile (Selesai)
+    - Fitur mengganti name, username, email, dan password (Selesai)
+    - Fitur untuk menghapus akun (tambahkan juga konfirmasi untuk user ya atau tidak) (Selesai)
 
 # Tugas 1 (Selesai)
 
