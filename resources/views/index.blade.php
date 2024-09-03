@@ -1,95 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum Tanya Jawab</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home.css">
-    
-</head>
+@section('title', '')
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light head-home">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Forum Diskusi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div class="profile-icon">
-                                <span>N</span>
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <?php if($isLogin) { ?>
-                                <li><a class="dropdown-item" href="{{ route('profile') }}">Profile</a></li>
-                                <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
-                            <?php } else { ?>
-                                <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                            <?php } ?>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+@section('css')
+    <link rel="stylesheet" href="css/home.css">
+@endsection
+
+@section('js')
+    <script src="js/search.js"></script>
+@endsection
+
+@section('content')
+    <x-navbar></x-navbar>
 
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-8">
-                <div class="card mb-4">
-                    <div class="card-header head-home">
-                        Ajukan Pertanyaan
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="questionTitle" class="form-label">Judul Pertanyaan</label>
-                                <input type="text" class="form-control" id="questionTitle"
-                                    placeholder="Masukkan judul pertanyaan">
-                            </div>
-                            <div class="mb-3">
-                                <label for="questionDetails" class="form-label">Detail Pertanyaan</label>
-                                <textarea class="form-control" id="questionDetails" rows="4"
-                                    placeholder="Jelaskan pertanyaan Anda"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-success">Kirim Pertanyaan</button>
-                        </form>
-                    </div>
-                </div>
+                <x-tambah_pertanyaan/>
 
                 <div class="card">
                     <div class="card-header head-home">
-                        Daftar Pertanyaan
+                        Diskusi
                     </div>
                     <div class="card-body questions-list">
-                        <div class="mb-4">
-                            <h5 class="card-title">Judul Pertanyaan 1</h5>
-                            <p class="card-text">Deskripsi pertanyaan</p>
-                            <a href="{{ route('question') }}" class="detail-btn">Lihat Detail</a>
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title">Judul Pertanyaan 2</h5>
-                            <p class="card-text">Deskripsi pertanyaan</p>
-                            <a href="{{ route('question') }}" class="detail-btn">Lihat Detail</a>
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title">Judul Pertanyaan 3</h5>
-                            <p class="card-text">Deskripsi pertanyaan</p>
-                            <a href="{{ route('question') }}" class="detail-btn">Lihat Detail</a>
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title">Judul Pertanyaan 4</h5>
-                            <p class="card-text">Deskripsi pertanyaan</p>
-                            <a href="{{ route('question') }}" class="detail-btn">Lihat Detail</a>
-                        </div>
+                        @foreach($topics as $topic)
+                            @if((request()->query('categorie') != null && request()->query('categorie') != $topic->categorie_id) || (request()->query('search') != null && !str_contains(strtolower($topic->title), strtolower(request()->query('search')))))
+                                @continue
+                            @endif
+                            <div class="mb-4">
+                                <h5 class="card-title">{{ $topic->title }}</h5>
+                                <p class="card-text">{{ substr($topic->body, 0, 50) }}...</p>
+                                <a href="{{ route('question', $topic->id) }}" class="detail-btn">Lihat</a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -100,10 +43,10 @@
                         Pencarian
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form id="search_form" action="" method="get">
                             <div class="mb-3">
                                 <label for="search" class="form-label">Cari Pertanyaan</label>
-                                <input type="text" class="form-control" id="search" placeholder="Cari di forum">
+                                <input type="text" class="form-control" id="search" name="search" placeholder="Cari di forum" value="{{ request()->query('search') }}">
                             </div>
                             <button type="submit" class="btn btn-success">Cari</button>
                         </form>
@@ -115,22 +58,14 @@
                         Kategori
                     </div>
                     <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action">Kategori 1</a>
-                        <a href="#" class="list-group-item list-group-item-action">Kategori 2</a>
-                        <a href="#" class="list-group-item list-group-item-action">Kategori 3</a>
+                        @foreach ($categories as $categorie)
+                            <a href="{{ request()->query('search') != null ? '?search='.request()->query('search').'&categorie='.$categorie->id : '?categorie='.$categorie->id }}" class="list-group-item list-group-item-action">{{ $categorie->name }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="head-home text-center text-lg-start mt-5">
-        <div class="text-center p-3">
-            © 2024 Forum Diskusi
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+    <x-footer></x-footer>
+@endsection
