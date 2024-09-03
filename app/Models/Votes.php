@@ -19,4 +19,12 @@ class Votes extends Model
         'user_id',
         'vote'
     ];
+
+    public function comment() {
+        return $this->belongsTo(Comment::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

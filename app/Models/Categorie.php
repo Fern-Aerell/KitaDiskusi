@@ -16,6 +16,9 @@ class Categorie extends Model
      */
     protected $fillable = [
         'name',
-        'description'
     ];
+
+    public function topics() {
+        return $this->hasMany(Topic::class);
+    }
 }

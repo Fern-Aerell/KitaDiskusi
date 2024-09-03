@@ -17,7 +17,18 @@ class Comment extends Model
     protected $fillable = [
         'topic_id',
         'user_id',
-        'parent_id',
         'body',
     ];
+
+    public function topic() {
+        return $this->belongsTo(Topic::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function votes() {
+        return $this->hasMany(Votes::class);
+    }
 }
