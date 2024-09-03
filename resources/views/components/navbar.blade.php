@@ -10,8 +10,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <div class="profile-icon">
-                            <span>N</span>
+                        <div class="profile-icon" style="background-color: #FFFFFF; color: #000000;">
+                            <span>{{ auth()->check() ? substr(auth()->user()->name, 0, 1) : 'G' }}</span>
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
