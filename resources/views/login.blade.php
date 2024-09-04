@@ -10,7 +10,6 @@
     <div class="halaman-login">
         <form action="{{ route('login.auth') }}" method="post">
             <img src="kitadiskusi_logo.png" alt="" style="background-color: black">
-            <p>{{ session('success') }}</p>
             <div class="email">
                 @csrf
                 <input type="text" name="email" id="email" placeholder="Email">

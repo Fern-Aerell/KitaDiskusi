@@ -4,7 +4,6 @@
     </div>
     <div class="card-body">
         <form action="{{ route('topic.store') }}" method="post">
-            <p>{{ session('success') }}</p>
             @csrf
             <div class="mb-3">
                 <label for="categorie" class="form-label">Kategori</label>

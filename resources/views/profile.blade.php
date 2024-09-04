@@ -17,8 +17,6 @@
             <a class="back-button" href="{{ route('index') }}" style="text-decoration: none;"><i class="fas fa-arrow-left"></i></a>
             
             <h2 class="mb-4"><i class="fas fa-user-circle"></i> Profile Akun</h2>
-            
-            <p>{{ session('success') }}</p>
 
             <form action="{{ route('profile.update') }}" method="post">
                 @csrf

@@ -22,6 +22,12 @@
                     <div class="card-header head-detail d-flex justify-content-between align-items-center ">
                         <strong><span>Dari {{ $topic->user->name }}</span></strong>
                         <span class="text-muted">{{ $topic->created_at->format('d F Y - H:i') }}</span>
+                        @if($topic->user->id === auth()->id())
+                            <div>
+                                <button onclick="fiturBelumTersedia()" type="submit">Edit</button>
+                                <button onclick="fiturBelumTersedia()" type="submit">Hapus</button>
+                            </div>
+                        @endif
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ $topic->title }}</h5>
@@ -60,6 +66,12 @@
                                                 <p class="mb-1"><strong>{{ $comment->user->name }}:</strong></p>
                                                 <p class="text-muted">{{ $comment->created_at->format('d F Y - H:i') }}</p>
                                                 <p class="card-text">{{ $comment->body }}</p>
+                                                @if($comment->user->id === auth()->id())
+                                                    <div>
+                                                        <button onclick="fiturBelumTersedia()" type="submit">Edit</button>
+                                                        <button onclick="fiturBelumTersedia()" type="submit">Hapus</button>
+                                                    </div>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +86,6 @@
                         <strong>Buat Tanggapan</strong>
                     </div>
                     <div class="card-body">
-                        <p>{{ session('success') }}</p>
                         <form action="{{ route('comment.store') }}" method="post">
                             @csrf
                             <input type="text" name="topic_id" id="topic_id" value="{{ $topic->id }}" hidden>
