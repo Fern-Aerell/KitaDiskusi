@@ -20,7 +20,7 @@
             <div class="col-md-8">
                 <div class="card mb-4">
                     <div class="card-header head-detail d-flex justify-content-between align-items-center ">
-                        <span>Dari {{ $topic->user->name }}</span>
+                        <strong><span>Dari {{ $topic->user->name }}</span></strong>
                         <span class="text-muted">{{ $topic->created_at->format('d F Y - H:i') }}</span>
                     </div>
                     <div class="card-body">
@@ -71,7 +71,7 @@
 
                 <div class="card">
                     <div class="card-header head-detail">
-                        Buat Tanggapan
+                        <strong>Buat Tanggapan</strong>
                     </div>
                     <div class="card-body">
                         <p>{{ session('success') }}</p>
@@ -98,7 +98,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header head-detail">
-                        Diskusi Lainnya
+                        <strong>Diskusi Lainnya</strong>
                     </div>
                     <div class="list-group list-group-flush">
                         @forelse($topics as $topic)

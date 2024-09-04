@@ -20,7 +20,7 @@
 
                 <div class="card">
                     <div class="card-header head-home">
-                        Diskusi
+                        <strong>Diskusi</strong>
                     </div>
                     <div class="card-body questions-list">
                         @if($topics->isEmpty())
@@ -52,7 +52,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header head-home">
-                        Pencarian
+                       <strong> Pencarian</strong>
                     </div>
                     <div class="card-body">
                         <form id="search_form" action="" method="get">
@@ -67,7 +67,7 @@
 
                 <div class="card mt-4">
                     <div class="card-header head-home">
-                        Kategori
+                        <strong>Kategori</strong>
                     </div>
                     <div class="list-group list-group-flush">
                         @forelse ($categories as $categorie)

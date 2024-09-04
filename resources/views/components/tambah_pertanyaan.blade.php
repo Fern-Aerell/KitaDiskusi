@@ -1,6 +1,6 @@
 <div class="card mb-4">
     <div class="card-header head-home">
-        Buat diskusi
+        <strong>Buat diskusi</strong>
     </div>
     <div class="card-body">
         <form action="{{ route('topic.store') }}" method="post">
