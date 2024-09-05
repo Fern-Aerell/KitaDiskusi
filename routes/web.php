@@ -30,9 +30,12 @@ Route::middleware(['auth'])->group(function() {
     Route::delete('/profile', [ProfileController::class, 'delete'])->name('profile.delete');
 
     Route::post('/topic/store', [TopicController::class, 'store'])->name('topic.store');
+    Route::post('/topic/update', [TopicController::class, 'update'])->name('topic.update');
+    Route::get('/topic/{id}/delete', [TopicController::class, 'delete'])->name('topic.delete');
 
     Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.store');
-
     Route::post('/comment/vote', [CommentController::class, 'vote'])->name('comment.vote');
+    Route::get('/comment/{id}/delete', [CommentController::class, 'delete'])->name('comment.delete');
+    Route::post('/comment/update', [CommentController::class, 'update'])->name('comment.update');
 
 });

@@ -60,4 +60,40 @@ class CommentController extends Controller
 
         return redirect()->back();
     }
+
+    public function delete(Request $request, string $id) {
+        $comment = Comment::find($id);
+
+        if($comment == null) return abort(404);
+
+        if($comment->user_id != Auth::user()->id) {
+            return abort(403);
+        }
+
+        $comment->delete();
+
+        return 'success';
+    }
+
+    public function update(Request $request) {
+
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|string',
+            'body' => 'required|string',
+        ]);
+
+        if($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $comment = Comment::find($request->input('id'));
+
+        if($comment == null) abort(404);
+        if($comment->user_id != Auth::user()->id) abort(403);
+
+        $comment->body = $request->input('body');
+        $comment->save();
+
+        return redirect()->route('question', $comment->topic->id)->with('success', 'Comment telah diperbarui');
+    }
 }
