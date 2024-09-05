@@ -55,7 +55,7 @@
                             {{-- No Edit --}}
                             <div>
                                 <h5 class="card-title">{{ $topic->title }}</h5>
-                                <p class="card-text">{{ $topic->body }}</p>
+                                <pre class="card-text">{{ $topic->body }}</pre>
                             </div>
                         @endif()
                         <hr>
@@ -141,7 +141,7 @@
                                                     <p class="mb-1"><strong>{{ $comment->user->name }}:</strong></p>
                                                     <p class="text-muted">{{ $comment->created_at->format('d F Y - H:i') }}
                                                     </p>
-                                                    <p class="card-text">{{ $comment->body }}</p>
+                                                    <pre class="card-text">{{ $comment->body }}</pre>
                                                     @if ($comment->user->id === auth()->id())
                                                         <div>
                                                             <button onclick="addAllQueryParamAndRedirect([{key: 'edit', value: 'true'}, {key: 'tanggapan', value: '{{ $comment->id }}'}])" type="submit"><i class="bi bi-pencil"></i></button>
