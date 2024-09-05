@@ -35,7 +35,7 @@ Platform diskusi berbasis web yang dirancang untuk memfasilitasi percakapan dan 
 
 ## Desain ERD
 
-- Belum dibuat
+![Gambar ERD](rancangan/database.png)
 
 ## Nama-nama anggota
 
