@@ -26,16 +26,39 @@ Jika Anda mengalami masalah saat mengakses link demo, silakan laporkan kepada ka
     - CSS
     - JS
     - Laravel blade
+    - Vite
 
 - **Backend**:
     - Laravel
+    - PHP (^8.2)
 
 - **Database**: 
     - Mysql
 
-- **Deployment**: 
-    - Belum diketahui
+- **Package Manager**:
+    - Composer
+    - npm
 
+- **Testing**:
+    - PHPUnit
+
+- **Development Tools**:
+    - Laravel Tinker
+    - Laravel Sail
+    - Laravel Pint
+    - Faker
+    - Mockery
+    - Collision
+
+- **JavaScript Libraries**:
+    - Axios
+
+- **Build Tools**:
+    - Laravel Vite Plugin
+
+- **Hosting**: 
+    - InfinityFree (https://www.infinityfree.com/)
+    
 ## Cara Instalasi
 
 1. Clone repositori ini ke komputer Anda:
