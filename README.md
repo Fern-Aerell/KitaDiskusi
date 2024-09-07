@@ -6,6 +6,13 @@
 
 Platform diskusi berbasis web yang dirancang untuk memfasilitasi percakapan dan kolaborasi antar pengguna dalam berbagai topik.
 
+## Demo
+Anda dapat melihat demo website KitaDiskusi melalui link berikut: [http://kitadiskusi.free.nf](http://kitadiskusi.free.nf)
+
+Mohon diperhatikan bahwa link demo hanya dapat diakses menggunakan protokol http dan tidak dapat diakses melalui https karena menggunakan hosting gratis.
+
+Jika Anda mengalami masalah saat mengakses link demo, silakan laporkan kepada kami agar kami dapat segera memperbaikinya. Terima kasih atas pengertian dan kerjasamanya!
+
 ## Fitur Utama
 
 - **Pembuatan Topik Diskusi**: Pengguna dapat membuat topik diskusi baru
@@ -31,7 +38,70 @@ Platform diskusi berbasis web yang dirancang untuk memfasilitasi percakapan dan 
 
 ## Cara Instalasi
 
-- Belum dibuat
+1. Clone repositori ini ke komputer Anda:
+   
+   ```
+   git clone https://github.com/Fern-Aerell/KitaDiskusi.git
+   ```
+
+2. Masuk ke direktori proyek:
+   
+   ```
+   cd KitaDiskusi
+   ```
+
+
+3. Salin file `.env.example` menjadi `.env`:
+   
+   ```
+   cp .env.example .env
+   ```
+
+4. Buat database baru di MySQL untuk proyek ini.
+
+5. Edit file `.env` dan sesuaikan konfigurasi database:
+   
+   ```
+   DB_DATABASE=nama_database_anda
+   DB_USERNAME=username_database_anda
+   DB_PASSWORD=password_database_anda
+   ```
+
+6. Install dependensi PHP menggunakan Composer:
+   
+   ```
+   composer install
+   ```
+
+7. Generate kunci aplikasi:
+   
+   ```
+   php artisan key:generate
+   ```
+   
+
+8. Jalankan migrasi database:
+   
+   ```
+   php artisan migrate
+   ```
+
+9. (Opsional) Jalankan seeder untuk mengisi data awal:
+   
+   ```
+   php artisan db:seed
+   ```
+   
+
+10. Jalankan server development:
+    
+    ```
+    php artisan serve
+    ```
+
+11. Buka browser dan akses `http://localhost:8000` untuk melihat aplikasi.
+
+Pastikan Anda telah menginstal PHP, Composer, dan MySQL di komputer Anda sebelum memulai instalasi.
 
 ## Desain ERD
 
