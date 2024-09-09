@@ -13,6 +13,8 @@ Mohon diperhatikan bahwa link demo hanya dapat diakses menggunakan protokol http
 
 Jika Anda mengalami masalah saat mengakses link demo, silakan laporkan kepada kami agar kami dapat segera memperbaikinya. Terima kasih atas pengertian dan kerjasamanya!
 
+[Video Demo Nya](https://drive.google.com/file/d/1XvYjGuIFWPqxQwkfGajP_WsuHygHgo62/view?usp=sharing)
+
 ## Fitur Utama
 
 - **Pembuatan Topik Diskusi**: Pengguna dapat membuat topik diskusi baru
