@@ -141,7 +141,7 @@ Pastikan Anda telah menginstal PHP, Composer, dan MySQL di komputer Anda sebelum
 
 ## Video Presentasi
 
-- Fern Aerell (Belum dibuat)
-- Nico Ferdy Hutajulu (Belum dibuat)
-- Habib Asyrof (Belum dibuat)
-- Kurnia Husnul Khatimah (Belum dibuat)
+- [Fern Aerell](https://drive.google.com/drive/folders/1nCuFe8QF-wcDBUvW0B3ScOw61Jegv2sQ?usp=sharing)
+- [Nico Ferdy Hutajulu](https://drive.google.com/drive/folders/1nCuFe8QF-wcDBUvW0B3ScOw61Jegv2sQ?usp=sharing)
+- [Habib Asyrof](https://drive.google.com/drive/folders/1nCuFe8QF-wcDBUvW0B3ScOw61Jegv2sQ?usp=sharing)
+- Kurnia Husnul Khatimah (Tidak dapat ikut membuat video presentasi karena pulang kampung.)
