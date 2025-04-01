@@ -4,38 +4,38 @@
     <img src="rancangan/design/logo/kitadiskusi_logo.png" alt="icon" width=150">
 </p>
 
-Platform diskusi berbasis web yang dirancang untuk memfasilitasi percakapan dan kolaborasi antar pengguna dalam berbagai topik.
+A web-based discussion platform designed to facilitate conversations and collaboration among users on various topics.
 
 ## Demo
-Anda dapat melihat demo website KitaDiskusi melalui link berikut: [http://kitadiskusi.free.nf](http://kitadiskusi.free.nf)
+You can view the KitaDiskusi website demo through the following link: [http://kitadiskusi.free.nf](http://kitadiskusi.free.nf)
 
-Mohon diperhatikan bahwa link demo hanya dapat diakses menggunakan protokol http dan tidak dapat diakses melalui https karena menggunakan hosting gratis.
+Please note that the demo link can only be accessed using the HTTP protocol and cannot be accessed through HTTPS due to free hosting limitations.
 
-Jika Anda mengalami masalah saat mengakses link demo, silakan laporkan kepada kami agar kami dapat segera memperbaikinya. Terima kasih atas pengertian dan kerjasamanya!
+If you encounter any issues accessing the demo link, please report them to us so we can fix them promptly. Thank you for your understanding and cooperation!
 
-[Video Demo Nya](https://drive.google.com/file/d/1XvYjGuIFWPqxQwkfGajP_WsuHygHgo62/view?usp=sharing)
+[Demo Video](https://drive.google.com/file/d/1XvYjGuIFWPqxQwkfGajP_WsuHygHgo62/view?usp=sharing)
 
-## Fitur Utama
+## Key Features
 
-- **Pembuatan Topik Diskusi**: Pengguna dapat membuat topik diskusi baru
-- **Tanggapan**: Setiap diskusi memungkinkan pengguna untuk memberikan tanggapan.
-- **Upvote dan Downvote**: Pengguna dapat memberikan suara pada komentar untuk menyoroti kontribusi terbaik.
-- **Pencarian Topik**: Fitur pencarian yang memudahkan menemukan diskusi berdasarkan kata kunci atau kategori.
+- **Create Discussion Topics**: Users can create new discussion topics.
+- **Replies**: Each discussion allows users to provide replies.
+- **Upvote and Downvote**: Users can vote on comments to highlight the best contributions.
+- **Topic Search**: A search feature to easily find discussions based on keywords or categories.
 
-## Teknologi yang Digunakan
+## Technologies Used
 - **Frontend**:
     - HTML
     - CSS
     - JS
-    - Laravel blade
+    - Laravel Blade
     - Vite
 
 - **Backend**:
     - Laravel
     - PHP (^8.2)
 
-- **Database**: 
-    - Mysql
+- **Database**:
+    - MySQL
 
 - **Package Manager**:
     - Composer
@@ -61,85 +61,82 @@ Jika Anda mengalami masalah saat mengakses link demo, silakan laporkan kepada ka
 - **Hosting**: 
     - InfinityFree (https://www.infinityfree.com/)
     
-## Cara Instalasi
+## Installation Instructions
 
-1. Clone repositori ini ke komputer Anda:
+1. Clone this repository to your local machine:
    
    ```
    git clone https://github.com/Fern-Aerell/KitaDiskusi.git
    ```
 
-2. Masuk ke direktori proyek:
+2. Navigate to the project directory:
    
    ```
    cd KitaDiskusi
    ```
 
-
-3. Salin file `.env.example` menjadi `.env`:
+3. Copy the `.env.example` file to `.env`:
    
    ```
    cp .env.example .env
    ```
 
-4. Buat database baru di MySQL untuk proyek ini.
+4. Create a new MySQL database for this project.
 
-5. Edit file `.env` dan sesuaikan konfigurasi database:
+5. Edit the `.env` file and adjust the database configuration:
    
    ```
-   DB_DATABASE=nama_database_anda
-   DB_USERNAME=username_database_anda
-   DB_PASSWORD=password_database_anda
+   DB_DATABASE=your_database_name
+   DB_USERNAME=your_database_username
+   DB_PASSWORD=your_database_password
    ```
 
-6. Install dependensi PHP menggunakan Composer:
+6. Install PHP dependencies using Composer:
    
    ```
    composer install
    ```
 
-7. Generate kunci aplikasi:
+7. Generate the application key:
    
    ```
    php artisan key:generate
    ```
-   
 
-8. Jalankan migrasi database:
+8. Run the database migrations:
    
    ```
    php artisan migrate
    ```
 
-9. (Opsional) Jalankan seeder untuk mengisi data awal:
+9. (Optional) Run the seeder to populate initial data:
    
    ```
    php artisan db:seed
    ```
-   
 
-10. Jalankan server development:
+10. Start the development server:
     
     ```
     php artisan serve
     ```
 
-11. Buka browser dan akses `http://localhost:8000` untuk melihat aplikasi.
+11. Open your browser and go to `http://localhost:8000` to view the application.
 
-Pastikan Anda telah menginstal PHP, Composer, dan MySQL di komputer Anda sebelum memulai instalasi.
+Make sure you have PHP, Composer, and MySQL installed on your machine before starting the installation.
 
-## Desain ERD
+## ERD Design
 
-![Gambar ERD](rancangan/database.png)
+![ERD Image](rancangan/database.png)
 
-## Nama-nama anggota
+## Team Members
 
 - [Fern Aerell](https://github.com/Fern-Aerell)
 - [Nico Ferdy Hutajulu](https://github.com/NewX-Team)
 - [Habib Asyrof](https://github.com/HabibAsyrof)
 - [Kurnia Husnul Khatimah](https://github.com/kurniaaa01)
 
-## Video Presentasi
+## Presentation Videos
 
 - [Fern Aerell](https://drive.google.com/file/d/1dYb0j8x31IpIaxB0_gfA6e01eF8sr2WX/view?usp=sharing)
 - [Nico Ferdy Hutajulu](https://drive.google.com/file/d/1dYb0j8x31IpIaxB0_gfA6e01eF8sr2WX/view?usp=sharing)
